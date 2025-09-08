@@ -8,9 +8,14 @@ body {
   min-height: 100vh;
   background: linear-gradient(to bottom, #000b2b, #1b2735 70%, #212434);
   overflow: hidden;
+  overflow-y: auto;
 }
 
-/* étoiles scintillantes */
+/*Smooth Scroll*/
+html {
+  scroll-behavior: smooth;
+}
+
 .stars {
   width: 1px;
   height: 1px;
@@ -32,7 +37,6 @@ body {
   animation: twinkle 8s infinite linear;
 }
 
-/* étoiles supplémentaires */
 .stars::after {
   content: "";
   position: absolute;
@@ -49,7 +53,6 @@ body {
   animation: twinkle 6s infinite linear reverse;
 }
 
-/* effet scintillant */
 @keyframes twinkle {
 
   0%,

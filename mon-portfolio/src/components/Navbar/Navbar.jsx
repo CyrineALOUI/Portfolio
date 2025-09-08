@@ -9,7 +9,8 @@ export const Navbar = () => {
             <div className="navbar-logo">Portfolio.</div>
 
             <ul className={`navbar-links ${isOpen ? "active" : ""}`}>
-                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#hero">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
