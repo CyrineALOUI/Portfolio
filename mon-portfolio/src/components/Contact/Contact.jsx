@@ -3,6 +3,8 @@ import ContactImage from "../../assets/contact-image.png";
 import { FaPaperPlane } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
+import { toast } from "react-toastify";
+import NotificationSound from "../../assets/notification-sound.mp3";
 
 export const Contact = () => {
     const form = useRef();
@@ -10,25 +12,25 @@ export const Contact = () => {
     const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+    const playNotificationSound = () => {
+        const audio = new Audio(NotificationSound);
+        audio.play();
+    }
 
     const sendEmail = (e) => {
         e.preventDefault();
 
         emailjs
-            .sendForm(
-                serviceID,     //Service ID
-                templateID,    //Template ID
-                form.current,
-                publicKey     //Public Key
-            )
-            .then(
-                () => {
-                    alert("Message envoyé avec succès !");
-                },
-                (error) => {
-                    alert("Erreur : " + error.text);
-                }
-            );
+            .sendForm(serviceID, templateID, form.current, publicKey)
+            .then(() => {
+                toast.success("Message sent successfuly");
+                playNotificationSound();
+                form.current.reset();
+            })
+            .catch((error) => {
+                toast.error("Oops ! Something went wrong" + error.text);
+                playNotificationSound();
+            });
     };
 
     return (
