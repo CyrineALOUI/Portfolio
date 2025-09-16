@@ -45,6 +45,13 @@
     font-size: 1rem;
 }
 
+.recaptcha-container {
+    background-color: #e4e3e3;
+    justify-items: center;
+    padding: 8px;
+    border-radius: 8px;
+}
+
 .contact-form button {
     position: relative;
     transition: all 0.3s ease-in-out;
