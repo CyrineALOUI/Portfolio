@@ -11,7 +11,7 @@ export const Navbar = () => {
             <ul className={`navbar-links ${isOpen ? "active" : ""}`}>
                 <li><a href="#hero">About Me</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projets</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
 

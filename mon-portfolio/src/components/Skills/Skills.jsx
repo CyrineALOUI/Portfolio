@@ -36,6 +36,6 @@ export const Skills = () => {
                     <div className="skill-card"><SiGithub className="skill-icon" /><span>Git / GitHub</span></div>
                 </div>
             </div>
-        </section>
+        </section >   
     );
 };
